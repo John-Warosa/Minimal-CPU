@@ -1,3 +1,13 @@
-#include <stdio.h>
+#include "mincpu/cpu.h"
+#include "render/render.h"
 
-int main(int argc, char **argv) { printf("hello"); }
+#define WIDTH 320
+#define HEIGHT 320
+#define FPS 60
+
+int main(int argc, char **argv) {
+  uint8_t vram[256] = {0};
+
+  render_init(WIDTH, HEIGHT, FPS);
+  render_screen(vram);
+}
